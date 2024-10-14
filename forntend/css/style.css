@@ -1,0 +1,270 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Estilo del header */
+header {
+  background: url('../img/Diseño\ sin\ título.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  padding-left: 40px;
+  text-align: left;
+  position: relative; /* Para permitir el posicionamiento de los íconos */
+}
+
+/* Estilos para los iconos de redes sociales en el header */
+.social-icons {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.social-icons a {
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.social-icons i {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #007bff;
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Contenedor del contenido del header */
+.header-content {
+  max-width: 600px;
+  transform: translateX(-60px);
+}
+
+/* Títulos del header */
+h1 {
+  font-size: 3.5rem;
+  font-family: 'Georgia', serif;
+}
+
+/* Estilo del H2 como botón */
+.contact-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #2f2f2f;
+  color: #464444;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-size: 24px;
+}
+
+.contact-btn i {
+  margin-left: 10px;
+}
+
+.contact-btn:hover {
+  background-color: #2f2f2f;
+  color: #fff;
+}
+
+/* Texto descriptivo del header */
+p.lead {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
+/* Secciones generales */
+section {
+  padding: 60px 20px;
+}
+
+/* Imágenes generales */
+img.img-fluid {
+  width: 170px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+/* Animación de entrada */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilos del mapa y formulario */
+.map-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  background-color: #f9f9f9;
+}
+
+.map-container iframe {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.map-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-container:hover iframe {
+  transform: scale(1.02);
+}
+
+/* Estilos del formulario mejorado */
+form .form-control {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #333 !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  box-shadow: none !important;
+  transition: border-color 0.3s ease !important;
+}
+
+form .form-control:focus {
+  background-color: transparent !important;
+  outline: none !important;
+  border-bottom: 1px solid #1b1b1b !important;
+}
+
+form button {
+  background-color: transparent !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  padding: 10px 20px !important;
+  border-radius: 0 !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+form button:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Estilos para el formulario con imagen */
+#contact-section {
+  display: flex;
+  justify-content: space-between; 
+  padding: 40px;
+  height: auto;
+  
+}
+
+/* Contenedor del formulario */
+.form-container {
+  width: 50%; 
+}
+
+/* Contenedor para centrar la imagen */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+
+.image-container img {
+  max-width: 80%; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+  transition: transform 0.3s ease; 
+}
+
+.image-container img:hover {
+  transform: scale(1.05); 
+}
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+  #contact-section {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .form-container,
+  .image-container {
+    width: 100%; 
+  }
+
+  .image-container img {
+    max-width: 60%; 
+  }
+
+  header {
+    height: 50vh;
+    padding-left: 20px;
+  }
+
+  .header-content {
+    max-width: 100%;
+    transform: translateX(0);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p.lead {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+
+  .social-icons i {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  form .form-control {
+    margin-bottom: 15px;
+  }
+}
+
+/* Estilo del footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Botón "Ir arriba" */
+#back-to-top {
+  background-color: transparent !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  padding: 10px 20px !important;
+  border-radius: 0 !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+  cursor: pointer !important;
+
+}
+
+#back-to-top:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
