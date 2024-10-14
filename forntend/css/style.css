@@ -57,15 +57,16 @@ h1 {
 .contact-btn {
   display: inline-block;
   padding: 10px 20px;
-  border: 2px solid #2f2f2f;
-  color: #464444;
+  border: 2px solid #333;
+  color: #333;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .contact-btn i {
-  margin-left: 10px;
+  margin-left: 8px;
+  
 }
 
 .contact-btn:hover {
@@ -211,6 +212,19 @@ form button:hover {
 
   .image-container img {
     max-width: 60%; 
+  }
+
+  /* Ajustes para el mapa en móviles */
+  .map-container {
+    max-width: 80%;
+    padding: 5%;
+  }
+
+  .map-container iframe {
+    height: 200px; 
+    width: 80%; 
+    margin: 0 auto; 
+    display: block;
   }
 
   header {
