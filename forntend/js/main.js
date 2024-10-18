@@ -11,13 +11,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Desplazamiento a redes sociales con clic en el botón
+// Desplazamiento al formulario con clic en el botón
 document.getElementById('scroll-to-form').addEventListener('click', function() {
-  const socialLinks = document.getElementById('social-links');
-  if (socialLinks) {
-    socialLinks.scrollIntoView({
-      behavior: 'smooth'
-    });
+  const target = document.querySelector('#contact-section');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
   }
 });
 
@@ -56,7 +54,6 @@ window.addEventListener('DOMContentLoaded', function() {
   const backToTop = document.getElementById('back-to-top');
 
   if (backToTop) {
-    // Mostrar el botón "Ir arriba" cuando se desplaza hacia abajo
     window.addEventListener('scroll', function() {
       if (window.scrollY > 300) {
         backToTop.style.display = 'block';
@@ -124,3 +121,4 @@ window.addEventListener('DOMContentLoaded', function() {
     header.appendChild(greetingElement);
   }
 });
+     
