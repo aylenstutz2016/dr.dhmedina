@@ -4,9 +4,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
@@ -19,8 +17,8 @@ document.getElementById('scroll-to-form').addEventListener('click', function() {
   }
 });
 
-// Validación del formulario de contacto
-document.querySelector('form').addEventListener('submit', function(e) {
+// Validación y envío del formulario de contacto
+document.querySelector('form').addEventListener('submit', async function(e) {
   e.preventDefault(); // Prevenir el envío del formulario para validar
 
   const name = document.getElementById('name').value;
@@ -39,8 +37,30 @@ document.querySelector('form').addEventListener('submit', function(e) {
     return;
   }
 
-  alert('Formulario enviado correctamente!');
-  this.submit(); // Enviar el formulario si todo está bien
+  // Enviar los datos al backend
+  try {
+    const response = await fetch('http://localhost:3001/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+      }),
+    });
+
+    if (response.ok) {
+      // Mensaje de éxito y limpiar formulario
+      document.querySelector('form').reset();
+      alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
+    } else {
+      alert('Hubo un problema al enviar el correo. Por favor, inténtalo nuevamente.');
+    }
+  } catch (error) {
+    alert('Error al enviar el correo. Por favor, inténtalo nuevamente.');
+  }
 });
 
 // Función para validar el formato de un email
@@ -121,4 +141,3 @@ window.addEventListener('DOMContentLoaded', function() {
     header.appendChild(greetingElement);
   }
 });
-     
