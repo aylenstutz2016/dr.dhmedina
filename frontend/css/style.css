@@ -7,7 +7,7 @@ body {
 
 /* Estilo del header */
 header {
-  background: url('../img/Copia-Diseño-sin-título.jpg') no-repeat center center/cover;
+  background: url('../img/Copia-Diseno-sin-titulo.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: flex-start;
@@ -89,7 +89,7 @@ img.img-fluid {
   transform: translateY(0);
 }
 
-/* Botón de contacto */
+/* Botón de contacto en form */
 #contact {
   background-color: #000;
 }
