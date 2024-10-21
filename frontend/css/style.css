@@ -7,7 +7,7 @@ body {
 
 /* Estilo del header */
 header {
-  background: url('../img/Copia de Diseño sin título.jpg') no-repeat center center/cover;
+  background: url('../img/Copia-Diseño-sin-título.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: flex-start;
@@ -181,7 +181,13 @@ img.img-fluid {
   background-color: #000;
   padding: 2.5rem 0;
 }
-
+.h2-map {
+  color: #fff;
+  text-align: center;
+}
+.h2-map img {
+  vertical-align: middle; /* Alinea el ícono verticalmente en el medio del texto */
+}
 .map-container {
   max-width: 40%;
   margin: 0 auto;
