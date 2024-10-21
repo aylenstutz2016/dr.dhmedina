@@ -1,92 +1,111 @@
 /* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   color: #333;
   background-color: #f4f4f4;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem; /* Ajustable para accesibilidad */
 }
 
 /* Estilo del header */
 header {
-  background: url('../img/Copia-Diseno-sin-titulo.jpg') no-repeat center center/cover;
+  background: url('../img/Copia-Diseno-sin-titulo.webp') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: #fff;
-  padding-left: 2.5rem; 
+  padding-left: 2.5rem;
   text-align: left;
   position: relative;
 }
 /* Contenedor del contenido del header */
 .header-content {
-  max-width: 37.5rem; 
-  transform: translateX(-3.75rem); 
+  max-width: 37.5rem;
+  transform: translateX(-3.75rem);
 }
 
 /* Títulos del header */
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem; /* Unidades ajustables para accesibilidad */
   font-family: 'Georgia', serif;
+  margin: 0;
 }
 
 /* Texto descriptivo del header */
 p.lead {
-  font-size: 1.5rem;
+  font-size: 1.25rem; 
   margin-top: 0.625rem;
   margin-bottom: 4.375rem;
 }
 
 /* Secciones generales */
 section {
-  padding: 3.75rem 1.25rem; 
+  padding: 3.75rem 1.25rem;
 }
 
 /* Estilos para los iconos de redes sociales en el header */
 .social-icons {
   display: flex;
-  padding: 1rem; 
+  padding: 1rem;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
-
 }
 
 .social-icons a {
-  margin-right: 1rem; 
+  margin-right: 1rem;
   text-decoration: none;
 }
 
 .social-icon {
-  width: 2rem; 
+  width: 2rem;
   height: 2rem;
   transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   filter: brightness(0) invert(1);
 }
 
 .social-icon:hover {
-  transform: translateY(-0.3125rem) scale(1.1); 
+  transform: translateY(-0.3125rem) scale(1.1);
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:focus {
+  outline: 2px dashed #00f; 
+  outline-offset: 2px;
 }
 
 /* Imágenes generales */
 img.img-fluid {
-  width: 10.625rem; 
-  height: 5rem;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 /* Animación de entrada */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(3.125rem); 
+  transform: translateY(3.125rem);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Añadir soporte para usuarios que prefieren animación reducida */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    transition: none;
+  }
 }
 
 /* Botón de contacto en form */
@@ -96,12 +115,12 @@ img.img-fluid {
 
 .contact-btn {
   display: inline-block;
-  padding: 0.625rem 1.25rem; 
+  padding: 0.625rem 1.25rem;
   border: 1px solid #fff;
   color: #fff;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  font-size: 1.375rem; 
+  font-size: 1.375rem;
 }
 
 .contact-btn i {
@@ -111,6 +130,11 @@ img.img-fluid {
 .contact-btn:hover {
   background-color: #fff;
   color: #000;
+}
+
+.contact-btn:focus {
+  outline: 2px dashed #00f;
+  outline-offset: 2px;
 }
 
 /* Estilos para el formulario con imagen */
@@ -131,7 +155,7 @@ img.img-fluid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 50%;
 }
 
 .image-container img {
@@ -166,7 +190,6 @@ img.img-fluid {
   border: 1px solid #fff;
   color: #fff;
   padding: 0.625rem 1.25rem;
-  border-radius: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
@@ -176,26 +199,32 @@ img.img-fluid {
   color: #000;
 }
 
+#contact-section form button:focus {
+  outline: 2px dashed #00f;
+  outline-offset: 2px;
+}
+
 /* Estilos del mapa con imagen estática */
 #map-section {
   background-color: #000;
   padding: 2.5rem 0;
 }
+
 .h2-map {
   color: #fff;
   text-align: center;
 }
+
 .h2-map img {
-  vertical-align: middle; /* Alinea el ícono verticalmente en el medio del texto */
+  vertical-align: middle;
 }
+
 .map-container {
   max-width: 40%;
   margin: 0 auto;
   padding: 1.25rem;
   border-radius: 0.4rem;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease-in-out;
   background-color: #575757;
   text-align: center;
 }
@@ -224,9 +253,12 @@ img.img-fluid {
   border: 2px solid #727272;
   color: #727272;
   padding: 0.3125rem 0.9375rem;
-  border-radius: 0;
+  border-radius: 50%;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #back-to-top img {
@@ -235,13 +267,19 @@ img.img-fluid {
 }
 
 #back-to-top:hover img {
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
 #back-to-top:hover {
   background-color: #727272;
   color: #fff;
 }
+
+#back-to-top:focus {
+  outline: 2px dashed #00f;
+  outline-offset: 2px;
+}
+
 /* Estilo del footer */
 footer {
   background-color: #fff;
@@ -251,7 +289,6 @@ footer {
 
 /* Responsivo */
 @media (max-width: 768px) {
-
   header {
     height: 50vh;
     padding-left: 1.25rem;
