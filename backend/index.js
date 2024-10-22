@@ -15,8 +15,8 @@ apiKey.apiKey = process.env.BREVO_API_KEY;
 app.use(cors());
 app.use(express.json());
 
-// Ruta para enviar correos
-app.post('/send-email', async (req, res) => {
+// Ruta para enviar correos, cambiada a "/api/send-email"
+app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
   try {

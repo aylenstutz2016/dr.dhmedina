@@ -17,6 +17,9 @@ document.getElementById('scroll-to-form').addEventListener('click', function() {
   }
 });
 
+// URL dinámica según el entorno (producción o desarrollo)
+const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:3001/send-email' : 'https://tu-backend-en-produccion.com/send-email';
+
 // Validación y envío del formulario de contacto
 document.querySelector('form').addEventListener('submit', async function(e) {
   e.preventDefault(); // Prevenir el envío del formulario para validar
@@ -39,7 +42,7 @@ document.querySelector('form').addEventListener('submit', async function(e) {
 
   // Enviar los datos al backend
   try {
-    const response = await fetch('http://localhost:3001/send-email', {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
